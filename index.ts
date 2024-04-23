@@ -1,14 +1,19 @@
 import express from 'express'
 import userRouter from './routing/userRoutes'
+import mongoose from "mongoose";
 
 const app = express()
 
 app.use(express.json())
 
-app.use('/', userRouter)
+app.use(userRouter)
 
 const port = 3001
 
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`)
+mongoose.connect('mongodb+srv://admin:admin@maincluster.ejjytjx.mongodb.net/?retryWrites=true&w=majority&appName=MainCluster').then(() => {
+    app.listen(port, () => {
+        console.log(`Server started on port ${port}`)
+    })
+}).catch((err) => {
+    console.log(err.message)
 })
