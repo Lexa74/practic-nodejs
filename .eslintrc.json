@@ -27,9 +27,7 @@
       }
     }
   },
-  "plugins": [
-    "@typescript-eslint", "react", "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "react", "prettier"],
   "rules": {
     "prettier/prettier": [
       "error",
