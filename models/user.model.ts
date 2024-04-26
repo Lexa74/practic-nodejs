@@ -1,21 +1,13 @@
 import mongoose from "mongoose";
 
 const UserScheme = new mongoose.Schema({
-  name: {
+  email: {
     type: String,
-    required: [true, "Enter username"],
+    required: [true, "Enter email"],
   },
-  age: {
-    type: Number,
-    required: [true, "Enter age"],
-  },
-  isAdmin: {
-    type: Boolean,
-    required: [true, "Enter role"],
-  },
-  experience: {
-    type: Number,
-    required: [true, "Enter experience"],
+  password: {
+    type: String,
+    required: [true, "Enter password"],
   },
 });
 
